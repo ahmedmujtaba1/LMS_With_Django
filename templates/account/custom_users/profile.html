@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile | ODLRS{% endblock %}
+
+{% block content %}
+
+<div class="container inner-content">
+
+    <div class="row my-">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="card profile-bg mb-4">
+
+                <div class="card-header bg-warning text-center p-0 pt-4">
+
+                    <img src="{{ user.customer_profile.image.url }}" alt="" class="rounded-circle" height="150"
+                        width="150">
+                    <h4 class="text-dark bg-white py-2 mt-4 mb-0">{{ user.customer_profile.profile_name }}
+                    </h4>
+                </div>
+
+                <div class="card-body bg-dark rounded-bottom">
+                    <ul class="list-group list-group-flush text-cente text-white">
+
+                        <!-- <li class="list-group-item d-flex">
+                            Username: <p>{{ user.username }}</p>
+                        </!-->
+
+                        <li>
+                            Email: <p>{{ user.email }}</p>
+                        </li>
+
+                        <li>
+                            Contact: <p>{{ user.customer_profile.contact_no }}</p>
+                        </li>
+
+                        <li>
+                            Address: <p>{{ user.customer_profile.address }}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+            <div class="order-table">
+                {% block orders %} {% endblock %}
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

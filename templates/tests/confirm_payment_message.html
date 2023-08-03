@@ -1,0 +1,169 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Confirmation | ODLRS</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fakeLoader.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+</head>
+
+<body class="common-bg pt-0 ">
+
+    <!-- loader -->
+    <div class="fakeLoader"></div>
+    <!-- loader -->
+
+    <div class="container my-4">
+        <div class="card-width">
+            <div class="card card-form">
+                <div class="card-header bg-dark text-center py-">
+                    <h3 class="text-white mb-0 text-capitalize">Confirmation Voucher</h3>
+                </div>
+                <div class="card-bottom-img"></div>
+
+                <div class="card-body">
+                    {% if order_details.staff_check == True and order_details.accepted == True %}
+                    <div class="alert alert-success"> <strong>Order Approved</strong> </div>
+                    <!-- <b style="color: limegreen"></b> -->
+                    <!-- <hr> -->
+                    {% elif order_details.staff_check == True and order_details.accepted == False %}
+                    <div class="alert alert-danger"> <strong>Rejected... Try Again</strong> </div>
+                    <!-- <b style="color: red"></b> -->
+                    <!-- <hr> -->
+                    {% endif %}
+
+
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p for="">Name</p>
+                                <p>{{ order_details.client_info.profile_name }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p>Test Name</p>
+                                <p>{{ order_details.test_info.test_name }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p>Email</p>
+                                <p>{{ order_details.client_info.user.email }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p for="">Center</p>
+                                <p>{{ order_details.test_info.center.name  }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p for="">Booked Time Slot</p>
+                                <p>{{ order_details.booked_time_slot }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p>Booked Date</p>
+                                <p>{{ order_details.booked_date }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p for="">Total Price</p>
+                                <p>{{ total_price }}Tk. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p>Payment By</p>
+                                <p>{{  order_details.payment_method }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p>Payment Status</p>
+                                <p>{{  order_details.payment_type }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p for="">Contact</p>
+                                <p>{{ order_details.contact_no }} </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="group text-succes">
+                                <p>Address</p>
+                                <p>{{ order_details.client_info.address }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-3">
+
+                        {% if request.user.is_authenticated %}
+                        <div class="col-xs-12 col-sm-6 col-md-12">
+                            <a href="{% url 'home' %}" class="btn btn-dark custom-bt text-white w-100 btn-s">
+                                Back to Home
+                            </a>
+                        </div>
+                        {% else %}
+
+                        {% if order_details.staff_check == False and order_details.accepted == False %}
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <a href="{% url 'tests:staff-approved' order_details.id staff_username %}"
+                                class="btn btn-success text-white  w-100">
+                                Approve
+                            </a>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <a href="{% url 'tests:staff-rejected' order_details.id staff_username %}"
+                                class="btn btn-danger text-white w-100">
+                                Reject
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        {% if order_details.staff_check == True and order_details.accepted == True and order_details.came_for_test == False %}
+                        <div class="col-12">
+                            <a href="{% url 'tests:came-for-test' order_details.id staff_username %}"
+                                class="btn btn-dark custom-bt text-white w-100">
+                                Came For Test
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="{% static 'js/fakeLoader.min.js' %}"></script>
+    <script>
+        $.fakeLoader();
+    </script>
+</body>
+
+</html>

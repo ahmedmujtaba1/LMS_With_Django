@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}Filtered Reports | ODLRS{% endblock %}
+
+{% block content %}
+
+<div class="container inner-content report mt-">
+    <h4 class="font-weight-bold mb-0">Reports</h4>
+    <hr>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover mb-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th width="30px"> No. </th>
+                    <th width="230px"> Test Names </th>
+                    <th width="200px"> Validation DateTime </th>
+                    <th> Reports </th>
+                    <th> Status </th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for report in filtered_reports %}
+
+                <tr>
+                    <td> {{ forloop.counter }} </td>
+
+                    {% if report.approved_order.payment_type == 'Full Payment'  %}
+
+                    <td>
+                        <a class="text-success font-weight-bold"
+                            href="{% url 'report_processing:single-report-details' report.id %}">
+                            {{ report.approved_order.test_info.test_name }}
+                        </a>
+                    </td>
+                    <td class="text-success">{{ report.datetime }}
+                    </td>
+                    <td>
+                        <a class="text-success" href="/media/reports_PDF/report_demo.pdf">
+                            {{ report.upload_report }}
+                        </a>
+                    </td>
+                    <td class="text-success">
+                        {{ report.send_message }}
+                    </td>
+
+                    {% else %}
+
+                    <td>
+                        <a class="text-danger font-weight-bold"
+                            href="{% url 'report_processing:single-report-details' report.id %}">
+                            {{ report.approved_order.test_info.test_name }}
+                        </a>
+                    </td>
+                    <td class="text-danger">{{ report.datetime }}
+                    </td>
+                    <td>
+                        <a class="text-danger" href="/media/reports_PDF/report_demo.pdf">
+                            {{ report.upload_report }}
+                        </a>
+                    </td>
+                    <td class="text-danger">{{ report.send_message }}</td>
+
+                    {% endif %}
+
+                    {#                <td><a href="/media/reports_PDF/report_demo.pdf">{{ report.upload_report }}</a></td>#}
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- filtered reports Paginator -->
+    <ul class="pagination">
+        <li class="page-item">
+
+            {% if filtered_reports.has_previous %}
+            <a class="page-link" href="?page={{ filtered_reports.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="false">&laquo;</span>
+            </a>
+            {% endif %}
+
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">Page {{ filtered_reports.number }} of
+                {{ filtered_reports.paginator.num_pages }}.</a>
+        </li>
+        <li class="page-item">
+
+            {% if filtered_reports.has_next %}
+
+            <a class="page-link" href="?page={{ filtered_reports.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+            {% endif %}
+        </li>
+    </ul>
+    <!-- filtered reports Paginator -->
+</div>
+
+
+
+
+{#    {% for report in filtered_reports %}#}
+{##}
+{#        <h3>Test Name: {{ report.approved_order.test_info.test_name }}</h3>#}
+{##}
+{#    {% endfor %}#}
+
+{% endblock %}

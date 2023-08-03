@@ -1,0 +1,139 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Student Dashboard</title>
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="This is an example dashboard created using build-in elements and component">
+    <meta name="msapplication-tap-highlight" content="no">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fakeLoader.min.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <link href="{% static  'css/plugin.css' %}" rel="stylesheet">
+
+    <style>
+        @media (max-width: 991px) {
+            .navbar ul {
+                border-top: 1px solid #724684;
+            }
+
+            .navbar ul li {
+                border-bottom: 1px solid #724684;
+            }
+
+            .navbar ul li:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div class="fakeLoader"></div>
+    <!-- loader -->
+
+    <nav class="navbar navbar-expand-lg  header-shadow bg-alternate">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#"><b>ODLRS</b></a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fa fa-bars text-white"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="dropdown nav-item">
+                        <a href="{% url 'diagnostic_centers:staff-dashboard' staff.username %}"
+                            class="nav-link text-white">
+                            Staff Dashboard
+                        </a>
+                    </li>
+ 
+     
+                    <li class="dropdown nav-item">
+                        <a href="{% url 'diagnostic_centers:staff-logout' %}" class="nav-link text-white">
+                            Logout
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sideba fixed-heade">
+              <div class="app-main">
+            <div class="app-main__outer">
+                <div class="app-main__inner text-dark">
+                    <div class="row">
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-3 widget-content">
+                                <div class="widget-content-outer">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-heading">Center Name</div>
+                                            <div class="widget-subheading">{{ staff.center }}</div>
+                                        </div>
+                                        <!-- <div class="widget-content-right">
+                                            <div class="widget-numbers text-success">1896</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-3 widget-content">
+                                <div class="widget-content-outer">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-heading">Staff Name</div>
+                                            <div class="widget-subheading">{{ staff.username }}</div>
+                                        </div>
+                                        <!-- <div class="widget-content-right">
+                                            <div class="widget-numbers text-warning">$3M</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-3 widget-content">
+                                <div class="widget-content-outer">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-heading">Reported To:</div>
+                                            <div class="widget-subheading">
+                                                {% for a in admins %}
+                                                {{ a.username }}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <!-- <div class="widget-content-right">
+                                            <div class="widget-numbers text-danger">45,9%</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+               
+</body>
+
+</html>

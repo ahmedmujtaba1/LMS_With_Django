@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<body style="background-color: #D3D3D3;">
+
+<div class="login-bg box">
+	<div class="container">
+
+		<div class="card log-box">
+
+			<div class="card-body">
+
+				<h3>{% trans "Sign Up" %}</h3>
+
+				<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+					{% csrf_token %}
+					{{ form.as_p }}
+
+					{% if redirect_field_value %}
+					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+					{% endif %}
+
+					<button type="submit" class="btn w-20 my-2 login-btn text-uppercase" style="width: 20%; background: #0b21c6;">{% trans "Sign Up" %}</button>
+				</form>
+
+				<div class="boxx2 text-center">
+					<span>
+						{% blocktrans %}
+						<strong>Already have an account?</strong>
+						<a href="{{ login_url }}">SIGN IN</a>
+						{% endblocktrans %}
+					</span>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+{% endblock %}

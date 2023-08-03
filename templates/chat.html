@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<title>{% block title %} Chat {% endblock title %} </title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/chat.css' %}">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="center grid">
+    <div class="contacts">
+        <i class="fas fa-bars fa-2x"></i>
+        <h2>Student's Chat</h2>
+      
+        <!-- Add your contact list here if needed -->
+      
+    </div>
+    <div class="chat">
+        <div class="contact bar">
+            <div class="pic stark"></div>
+            <div class="name">Group</div>
+            <div class="seen">Today at 12:56</div>
+        </div>
+        <div class="messages" id="chat">
+            <!-- The messages will be loaded here dynamically -->
+            {% for message in messages %}
+            {% if message.sender == user.username %}
+            <div class="message parker">You: {{ message.content }}</div>
+            {% else %}
+            <div class="message stark ">{{ message.sender }}: {{ message.content }}</div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="input">
+            <i class="fas fa-camera"></i>
+            <i class="far fa-laugh-beam"></i>
+            <form id="messageForm" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <i class="fas fa-microphone"></i>
+                <button type="submit" id="send"><i class="fas fa-paper-plane"></i></button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
