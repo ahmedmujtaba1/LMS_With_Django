@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <style>
+        .login-bg {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .log-box {
+            width: 350px;
+        }
+    </style>
+</head>
+
+<body style="background: #6895f5;">
+
+    <div class="login-bg">
+        <div class="container">
+            <div class="card log-box text-center">
+
+                <div class="card-body">
+
+                    <h3 class="mb-0">Student Login</h3>
+                    <h6 class="mb-4 text-center">Login as Student</h6>
+
+                    <form method="post" class="login">
+                        {% csrf_token %}
+
+                        {{ staff_login_form.as_p }}
+
+                        <button class="btn btn-primary btn-block my-3" type="submit">
+                            LOGIN
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

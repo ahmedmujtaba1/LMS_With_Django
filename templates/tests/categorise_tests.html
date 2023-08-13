@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Categorise Tests | ODLRS{% endblock %}
+
+{% block content %}
+
+<div class="container inner-content">
+    <div class="row mt-2">
+        {% for test in  filtered_tests %}
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card test-box">
+                <div class="card-title">
+                    <img src="{{ test.image.url }}" class="card-img-top" alt="..." width="100%">
+                </div>
+
+                <div class="card-body" style="min-height: 90px">
+
+                    <h6 class="mb-2">
+                        <a href="{% url 'tests:test-details' test.id %}">{{ test.test_name }}</a>
+                    </h6>
+
+                    <p>{{ test.center.name }}</p>
+
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

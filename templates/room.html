@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Chat Room: {{ title }}{% endblock title %}</title>
+{% block content %}
+
+
+<h1>Chat Room: {{ title }}</h1>
+    {% for student in student_group %}
+        {% if student.student1 == username or student.supervisor == username or student.student2 == username or student.student3 == username %}
+            <div id="chat">
+                {% for message in messages %}
+                    {% if message.sender == student.student1 or message.sender == student.student2 or message.sender == student.student3 or message.sender == student.supervisor %}
+                        {% if message.room == pk_id %}
+                            <p>{{ message.sender }}: {{ message.content }}</p>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <form  method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Submit</button>
+            </form>
+        {% endif %}
+    {% endfor %}
+
+{% endblock content %}

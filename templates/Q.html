@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        <title>Questionnaire</title>
+        
+        <link rel="stylesheet" type="text/css" href="/static/style.css" />
+</head>
+
+
+<body>
+
+
+        <div id="page-wrap">
+
+
+                <h1>Questionnaire
+                </h1>
+                
+                <form action="" method="post" id="quiz">
+                    {% csrf_token %}
+                
+                    <ol>
+                        <li>
+                        
+                            <h3><p>Students are provided with an environment in which there are certain ways that depicts the student’s mindset for their understanding about educational aspects. One
+                                of them is comfortable with the sticky notes (Write down approaches), someone is easy only with the reading
+                                methods and others are good in understanding by following people’s footsteps while studying.</p>
+                                
+                                <b>1.        Which one of these is better for your understanding?</b></h3>
+                            
+                            <div>
+                                <input type="radio" name="question-1-answers" id="question-1-answers-A" value="Visual Learner" required />
+                                <label for="question-1-answers-A">A) Sticky Notes (Visual Learner)   </label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="question-1-answers" id="question-1-answers-B" value="Aural Learner" />
+                                <label for="question-1-answers-B">B) Read by yourself (Aural Learner)</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="question-1-answers" id="question-1-answers-C" value="Kinesthetic Learner" />
+                                <label for="question-1-answers-C">C) Follow examples (Kinesthetic Learner)</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="question-1-answers" id="question-1-answers-D" value="Verbal Learner" />
+                                <label for="question-1-answers-D">D) Records making techniques (Verbal Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-1-answers" id="question-1-answers-E" value="Analytical Learner" />
+                                <label for="question-1-answers-E">E) Logical work (Analytical Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-1-answers" id="question-1-answers-F" value="Social Learner" />
+                                <label for="question-1-answers-F">F) Group participating (Social Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-1-answers" id="question-1-answers-G" value="Solitary Learner" />
+                                <label for="question-1-answers-G">G) Taking personnel interest (Solitary Learner)</label>
+                            </div>
+                        
+                        </li>
+                        <li>
+                            <h3><p>Some students are better in their studying when they are marching here and there and read their topics loud.
+                                Someone is good at study when he is watching the person to whom he is listening.
+                                While some understands their materials better when they see other people’s way of working.
+                                And some kind of students understand their study materials well enough while they listen to the music when they are going to learn their lessons.</p>
+                                <b>2.        What type of study is helping for you?  </b></h3>
+                            
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-A" value="Visual Learner" required />
+                                <label for="question-2-answers-A">A) Looking while listening (Visual Learner)   </label>
+                            </div>
+                        
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-B" value="Aural Learner" />
+                                <label for="question-2-answers-B">B) Prolong writing method (Aural Learner)</label>
+                            </div>
+                        
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-C" value="Kinesthetic Learner" />
+                                <label for="question-2-answers-C">C) See others work (Kinesthetic Learner)</label>
+                            </div>
+                        
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-D" value="Verbal Learner" />
+                                <label for="question-2-answers-D">D) Reading Aloud (Verbal Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-E" value="Analytical Learner" />
+                                <label for="question-2-answers-E">E) Illogical and Irrational  (Analytical Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-F" value="Social Learner" />
+                                <label for="question-2-answers-F">F) Sharing forceful believes  (Social Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-2-answers" id="question-2-answers-G" value="Solitary Learner" />
+                                <label for="question-2-answers-G">G) Taking personnel interest (Solitary Learner)</label>
+                            </div>
+                    
+                        </li>
+                        <li>
+                            <h3><p>Students are provided with some reading techniques like someone likes the reading material that should be neat and clean which will be helpful to them.
+                                During reading some of them make a picture of that reading material in their mind and other students picks out some key points from material according to their own taste.
+                                And some students have skills in verbal justification or description along with setting directions.</p>
+                            
+                                <b> 3.        Which one of these will you prefer for reading work?</b></h3>
+                            
+                            <div>
+                                <input type="radio" name="question-3-answers" id="question-3-answers-A" value="Visual Learner" required />
+                                <label for="question-3-answers-A">A) Picture in mind (Visual Learner)   </label>
+                            </div>
+                    
+                            <div>
+                                <input type="radio" name="question-3-answers" id="question-3-answers-B" value="Aural Learner" />
+                                <label for="question-3-answers-B">B) Neat and Clean (Aural Learner)</label>
+                            </div>
+                    
+                            <div>
+                                <input type="radio" name="question-3-answers" id="question-3-answers-C" value="Kinesthetic Learner" />
+                                <label for="question-3-answers-C">C) Need frequent breaks (Kinesthetic Learner)</label>
+                            </div>
+                    
+                            <div>
+                                <input type="radio" name="question-3-answers" id="question-3-answers-D" value="Verbal Learner" />
+                                <label for="question-3-answers-D">D) In-depth reading (Verbal Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-3-answers" id="question-3-answers-E" value="Analytical Learner" />
+                                <label for="question-3-answers-E">E) Key Points from material (Analytical Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-3-answers" id="question-3-answers-F" value="Social Learner" />
+                                <label for="question-3-answers-F">F) Work with lots of pictures (Social Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-3-answers" id="question-3-answers-G" value="Solitary Learner" />
+                                <label for="question-3-answers-G">G) Influence of thoughts in work (Solitary Learner)</label>
+                            </div>
+                        
+                        </li>
+                        <li>
+                            <h3><p>In academic era, students usually face a number of 
+        problems in their daily life. Students try to solve those 
+        problems usually by engaging with them with no 
+        guidance. So as a result of this they fail and then try 
+        again. Some students handle that problems with some 
+        knowledge and with the help of other people. Other 
+        students tend to solve the problems in segments and try 
+        to solve those little segments one by one.</p>
+                                
+                                <b>4. How would you like to solve your academic problems?</b></h3>
+                            
+                            <div>
+                                <input type="radio" name="question-4-answers" id="question-4-answers-A" value="Visual Learner" required />
+                                <label for="question-4-answers-A">A) Visualisation of problem (Visual Learner)</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="question-4-answers" id="question-4-answers-B" value="Aural Learner" />
+                                <label for="question-4-answers-B">B)   With help of someone (Aural Learner)</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="question-4-answers" id="question-4-answers-C" value="Kinesthetic Learner" />
+                                <label for="question-4-answers-C">C) Step by step approach (Kinesthetic Learner)</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="question-4-answers" id="question-4-answers-D" value="Verbal Learner" />
+                                <label for="question-4-answers-D">D) through discussion (Verbal Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-4-answers" id="question-4-answers-E" value="Analytical Learner" />
+                                <label for="question-4-answers-E">E) Quick Attempt (Analytical Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-4-answers" id="question-4-answers-F" value="Social Learner" />
+                                <label for="question-4-answers-F">F) Involvement of others(Social Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-4-answers" id="question-4-answers-G" value="Solitary Learner" />
+                                <label for="question-4-answers-G">G) Execution Intelligence (Solitary Learner)</label>
+                            </div>
+                                
+                        
+                        </li>
+                        <li>
+                            <h3><p>Different students have different types of mindsets. May 
+        be some students like to study with others students as its 
+        helps them for their better understanding. Others like to  
+        study by own. Some of them have dual qualities either in 
+        groups or by their self. Some students follow other 
+        people materials for their easiness.</p>
+                                
+                                <b>5. What type of study will you prefer?</b></h3>
+                        
+                            <div>
+                                <input type="radio" name="question-5-answers" id="question-5-answers-A" value="Social Learner" required />
+                                <label for="question-5-answers-A">A) Work with others (Social Learnere)  </label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="question-5-answers" id="question-5-answers-B" value="Solitary Learner" />
+                                <label for="question-5-answers-B">B) self study (Solitary Learner)</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="question-5-answers" id="question-5-answers-C" value="Kinesthetic Learner" />
+                                <label for="question-5-answers-C">C) Freedom to move (Kinesthetic Learner)</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" name="question-5-answers" id="question-5-answers-D" value="Analytical Learner" />
+                                <label for="question-5-answers-D">D) Looking others work (Analytical Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-5-answers" id="question-5-answers-E" value="Verbal Learner" />
+                                <label for="question-5-answers-E">E) Gestures and verbal communication (verbal learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-5-answers" id="question-5-answers-F" value="Aural Learner" />
+                                <label for="question-5-answers-F">F) Facts written by others (Aural Learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-5-answers" id="question-5-answers-G" value="Visual Learner" />
+                                <label for="question-5-answers-G">G) study at silent place (Visual Learner)</label>
+                            </div>
+
+
+                        </li>
+                        <li>
+                            <h3><p>Students like the categories of work according to their 
+        tastes. For example if some students are given a project, 
+        some will try to do their job by own hand and help. 
+        Some will try to see that how the other people handled 
+        that kind of work and starts to follow their steps. Some 
+        believe to handle that project by debating, consultations 
+        and discussion. Some students sets their own target and 
+        tries to achieve it.  </p>
+                                
+                                <b>6. Which type of work is good for your understanding?</b></h3>
+                        
+                            <div>
+                                <input type="radio" name="question-6-answers" id="question-6-answers-A" value="Solitary Learner" required />
+                                <label for="question-6-answers-A">A)By own ability (Solitary Learner)  </label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-6-answers" id="question-6-answers-B" value="Kinesthetic Learner" />
+                                <label for="question-6-answers-B">B) Follow others goal (Kinesthetic learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-6-answers" id="question-6-answers-C" value="Verbal Learner" />
+                                <label for="question-6-answers-C">C) Verbal exchange and negotiation (verbal learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-6-answers" id="question-6-answers-D" value="Analytical Learner" />
+                                <label for="question-6-answers-D">D) follow own direction (Analytical learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-6-answers" id="question-6-answers-E" value="Social Learner" />
+                                <label for="question-6-answers-E">E) Organizational work (Social learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-6-answers" id="question-6-answers-F" value="Visual Learner" />
+                                <label for="question-6-answers-F">F) Build focus using flashcards (visual learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-6-answers" id="question-6-answers-G" value="Aural Learner" />
+                                <label for="question-6-answers-G">G) by only hearing work (Aural learner)</label>
+                            </div>
+
+
+                        </li>
+                        <li>
+                            <h3><p>Students have different troubles, complications and 
+        hardships while studying. Some students have 
+        problems like they can’t focus on their studies for long 
+        time and their eyes tire. Some can’t learn their lessons 
+        in such 
+        type of environment where there is noise of music and 
+        people. Some face difficult to follow others goals and 
+        some of them can’t to generate their interest in studies. 
+        Some face problems when they are working in some 
+        project and the requirements of the project changes. 
+        Different work need different kind of attention. When 
+        variations happen some find it as challenging and some 
+        are afraid of them.</p>
+                                
+                                <b>7. What type of difficulty you face while studying?</b></h3>
+                        
+                            <div>
+                                <input type="radio" name="question-7-answers" id="question-7-answers-A" value="Aural Learner" required />
+                                <label for="question-7-answers-A">A) Eyes tired (Aural learner) </label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-7-answers" id="question-7-answers-B" value="Visual Learner" />
+                                <label for="question-7-answers-B">B) people talking and music playing (visual learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-7-answers" id="question-7-answers-C" value="Kinesthetic Learner" />
+                                <label for="question-7-answers-C">C) difficult to read direction (kinesthetic learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-7-answers" id="question-7-answers-D" value="Solitary Learner" />
+                                <label for="question-7-answers-D">D) difficult to create personal interset (Solitary learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-7-answers" id="question-7-answers-E" value="Social Learner" />
+                                <label for="question-7-answers-E">E) variation difficulty (Social learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-7-answers" id="question-7-answers-F" value="Analytical Learner" />
+                                <label for="question-7-answers-F">F) changes in existing behavior (Analytical learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-7-answers" id="question-7-answers-G" value="Verbal Learner" />
+                                <label for="question-7-answers-G">G) difficult to create word based techniques (verbal learner)</label>
+                            </div>
+
+
+                        </li>
+                        <li>
+                            <h3><p>Suppose students are working on a project and the 
+        project is in its final stages but sudden customer wants 
+        some type of different work. Then some students wants 
+        to work on that project in groups. Some will set targets 
+        in their mind and they can work either in groups or by 
+        own to fulfill the customer needs.</p>
+                                
+                                <b>8. How will you embrace changes/variations?</b></h3>
+
+
+                            <div>
+                                <input type="radio" name="question-8-answers" id="question-8-answers-A" value="Social Learner" required />
+                                <label for="question-8-answers-A">A) by working in groups (social learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-8-answers" id="question-8-answers-B" value="Solitary Learner" />
+                                <label for="question-8-answers-B">B) by setting own goals (solitary learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-8-answers" id="question-8-answers-C" value="Kinesthetic Learner" />
+                                <label for="question-8-answers-C">C) freedom to move (kinesthetic learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-8-answers" id="question-8-answers-D" value="Analytical Learner" />
+                                <label for="question-8-answers-D">D) through changing behavior (analytical learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-8-answers" id="question-8-answers-E" value="Visual Learner" />
+                                <label for="question-8-answers-E">E) making piture in mind (visual learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-8-answers" id="question-8-answers-F" value="Aural Learner" />
+                                <label for="question-8-answers-F">F) getting/taking instructions (aural learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-8-answers" id="question-8-answers-G" value="Verbal Learner" />
+                                <label for="question-8-answers-G">G) through discussion (verbal learner)</label>
+                            </div>
+
+
+                        </li>
+                        <li>
+                            <h3><p>Students have separate and distinct qualities of learning 
+        according to their own skills. Some students learn only 
+        by listening to others. Someone learn the work by using 
+        his hands a lot and calling something. Someone is good 
+        in keeping his record for the future use. Others learn by 
+        making pictures and then define some directions for 
+        their understanding.</p>
+                                
+                                <b>9. What will you do for the remembrance of things/work?</b></h3>
+
+
+                            <div>
+                                <input type="radio" name="question-9-answers" id="question-9-answers-A" value="Aural Learner" required />
+                                <label for="question-9-answers-A">A)by hearing rather than seeing (Aural learner) </label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-9-answers" id="question-9-answers-B" value="Kinesthetic Learner" />
+                                <label for="question-9-answers-B">B) on finger tips (kinesthetic learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-9-answers" id="question-9-answers-C" value="Verbal Learner" />
+                                <label for="question-9-answers-C">C) by making records (verbal learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-9-answers" id="question-9-answers-D" value="Visual Learner" />
+                                <label for="question-9-answers-D">D) pics and arrows in notes (visual learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-9-answers" id="question-9-answers-E" value="Analytical Learner" />
+                                <label for="question-9-answers-E">E) taking unsound/illogical work (Analytical learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-9-answers" id="question-9-answers-F" value="Social Learner" />
+                                <label for="question-9-answers-F">F) by working in groups (social learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-9-answers" id="question-9-answers-G" value="Solitary Learner" />
+                                <label for="question-9-answers-G">G) creating personal interset (Solitary learner)</label>
+                            </div>
+
+
+                        </li>
+                        <li>
+                            <h3><p>Students are provided with such types of domain in 
+        which they can choose a mechanism or methodology. 
+        Some will choose it by keeping in mind their abilities, 
+        actions and rules. Some will have an aim or purpose in 
+        mind for the selection of that method. Others will see 
+        someone else do it first and then they will decide what 
+        to do. </p>
+                                
+                                <b>10. What will you do for picking up a system or a procedures?</b></h3>
+
+
+                            <div>
+                                <input type="radio" name="question-10-answers" id="question-10-answers-A" value="Analytical Learner" required />
+                                <label for="question-10-answers-A">A) Highlights your abilitis (Analtical learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-10-answers" id="question-10-answers-B" value="Solitary Learner" />
+                                <label for="question-10-answers-B">B) setting own goals (Solitary learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-10-answers" id="question-10-answers-C" value="Kinesthetic Learner" />
+                                <label for="question-10-answers-C">C) by following examples and directions (kinesthetic learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-10-answers" id="question-10-answers-D" value="Social Learner" />
+                                <label for="question-10-answers-D">D) involvement of people (social learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-10-answers" id="question-10-answers-E" value="Verbal Learner" />
+                                <label for="question-10-answers-E">E) based on language reasoning (verbal learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-10-answers" id="question-10-answers-F" value="Aural Learner" />
+                                <label for="question-10-answers-F">F) by listening to people (Aural learner)</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" name="question-10-answers" id="question-10-answers-G" value="Visual Learner" />
+                                <label for="question-10-answers-G">G) Graphics based tasks (Visual learner)</label>
+                            </div>
+
+
+                        </li>
+                    
+                    </ol>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" id="checkbox" value={{id}} required>
+                                <label for="check">I hereby confirm that provided information is correct and I fill it by full responssibilty that it is honest.</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Submit Quiz" />
+                            </td>
+                        </tr>
+                    </table>
+                        
+                </form>
+        
+        </div>
+        
+        <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-68528-29");
+        pageTracker._initData();
+        pageTracker._trackPageview();
+        </script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home | LMS{% endblock %}
+{% block content %}
+{% load  define_action %}
+<head>
+    {% comment %} <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> {% endcomment %}
+</head>
+<body style="background-color: rgb(142, 165, 249);">
+<div class="container">
+    {% if user.is_authenticated %}
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Welcome back, {{ user.username }}!</h3>
+        </div>
+        <div class="col-md-4 text-end">
+            {% comment %} {% if project_uploads|has_approved_project2:username == True %}
+                <i class="fas fa-bell fa-shake" style="color: #cc641e; font-size: 24px; position: relative; top: 10px;"></i>
+            {% endif %} {% endcomment %}
+            </div>
+    </div>
+
+
+        {% if questions %}
+        {% for question in questions %}
+            {% if question.user|lower == request.user.username|lower %}
+            
+                  <div class="container mt-4">
+                      
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h2>Group</h2>
+
+                          </div>
+                         <div class="col-md-15">
+                            <div class="table-responsive-xl">
+                                <table class="table table-hover table-striped table-bordered">
+                                  <thead class="bg-info text-white">
+                                    <tr>
+                                        <th>Supervisor</th>
+                                        <th>Group Members</th>
+                                        <th>Project Title</th>
+                                        {% with approve=False %}
+                                        {% with project_upload_user=False %}
+                                        {% for project_upload in project_uploads %}
+                                                {% if project_upload.user == username or project_upload.user == student.Student1 or project_upload.user == student.Student2 or project_upload.user == student.Student3 %}
+                                                    <td>Project Status</td>
+                                                {% endif %}
+                                                {% endfor %}
+
+                                                {% if student.Student1|lower == username|lower %}
+                                                {% if not approve %}
+                                                    {% if project_uploads|has_approved_project:username == False %}
+                                                        <td colspan="2">Upload Propject Idea</td>
+                                                    {% endif %}
+                                                {% endif %}
+                                                {% endif %}
+                                        {% endwith %}
+                                        {% endwith %}
+                                    </tr>
+                                </thead>
+                                
+                                <tbody>
+                                    {% for index in student %}
+                                        {% if forloop.first %}
+                                            <tr>
+                                                <td>{{ student.Supervisor }}</td>
+                                                <td>You, {% if student.Student1 != username %}{{ student.Student1 }},{% endif %} {% if student.Student2 != username %}{{ student.Student2 }},{% endif %} {% if student.Student3 != username %}{{ student.Student3 }},{% endif %}</td>
+                                                <td>{{ student.Title }}</td>
+                                                
+                                                {% for project_upload in project_uploads %}
+                                                    {% if project_upload.user == username or project_upload.user == student.Student1 or project_upload.user == student.Student2 or project_upload.user == student.Student3 %}
+                                                        <td>{% if project_upload.approved %}Approved{% else %}Pending.. {% endif %}</td>
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                                {% if student.Student1|lower == username|lower %}
+                                                    {% if project_uploads|has_approved_project:username == False %}
+                                                        <td colspan="2"><a href="http://127.0.0.1:8000/upload/">Upload Proposal</a></td>
+                                                        {% comment %} <td>Proposal not uploaded</td> {% endcomment %}
+                                                    {% endif %}
+                                                {% endif %}
+                                                
+                                            </tr>
+                                        {% endif %}
+                                        {% empty %}
+                                            <tr>
+                                                <td colspan="8">No Group Assigned As Yet.</td>
+                                            </tr>
+                                    {% endfor %}
+
+
+                                 </tbody>
+                              
+                                </table>
+                                
+                                {% if project_uploads|has_approved_project2:student == True %}
+                                    <div class="row mt-4">
+                                        <div class='col-md-3'>
+                                            <a href='http://127.0.0.1:8000/upload/' style="color:white;"><button type="button" class="btn btn-info" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                Upload Progress
+                                            </button>
+                                            </a>
+                                        </div>
+                                        <div class=''>
+                                            <a href="{% url 'chat_messages:room' %}" style="color:white;"><button type="button" class="btn btn-info" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                Ask Question
+                                            </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% comment %} <p>{{ project_uploads|has_approved_project2:student }}</p> {% endcomment %}
+                        
+                                
+
+              <br>
+
+              <hr>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+
+
+
+                  <hr>
+
+            {% else %}
+                <p>Please fill your questionnaire.</p>
+                <a href="http://127.0.0.1:8000/questionnaire/" class="btn btn-primary">Fill Questionnaire</a>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <a href="http://127.0.0.1:8000/questionnaire/" class="btn btn-primary">Fill Questionnaire</a>
+    {% endif %}
+    
+    
+              
+
+   
+
+
+
+  
+ 
+<br>
+    {% else %}
+    <div class="container content">
+      <div class="row">
+          <div class="col-md-5">
+              <div class="text-overlay">
+                  <h2>Project Management - LMS</h2>
+                  <p>Welcome to the Project Management Learning Management System (LMS). Our platform provides comprehensive tools and resources to efficiently manage your projects and enhance your project management skills.</p>
+                  <p>With our LMS, you can access various features such as:</p>
+                  <ul>
+                      <li>Project planning and scheduling tools</li>
+                      <li>Task assignment and tracking</li>
+                      <li>Team collaboration and communication</li>
+                      <li>Resource management</li>
+                      <li>Document sharing and version control</li>
+                      <li>Progress reporting and analytics</li>
+                      <!-- Add more relevant features -->
+                  </ul>
+                  <p>Whether you are a project manager, team member, or stakeholder, our LMS offers a user-friendly interface to streamline your project workflows and achieve successful project outcomes.</p>
+                  <p>Please <a href="http://127.0.0.1:8000/accounts/login/" target="_blank">login</a> to explore all the options and tools available to you.</p>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <!-- Image column -->
+              <div class="header-image">
+                  <img src="http://127.0.0.1:8000/static/home.jpeg" alt="Project Management - LMS" height="560" width="700" class="rounded-circle">
+              </div>
+          </div>
+      </div>
+  </div>
+    {% endif %}
+</div>
+
+</body>
+{% endblock content %}

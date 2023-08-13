@@ -1,0 +1,91 @@
+
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Upload Details</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <!-- Add your custom CSS styles if needed -->
+    <style>
+        /* Add your custom styles here */
+    </style>
+</head>
+
+<body>
+    <div class="fakeLoader"></div>
+
+    <nav class="navbar navbar-expand-lg header-shadow bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="">
+                <b></b>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars text-white"></i>
+            </button>
+          
+            <div class="widget-subheading">Welcome   <b>{{ user.username }} </b></div>
+            
+           
+        <ul>
+            <ul class="dropdown nav-item">
+                <a href="{% url 'diagnostic_centers:admin-logout' %}" tabindex="0"
+                    class="nav-link text-white">Logout</a>
+            </ul>
+        </ul>
+        </div>
+        </div>
+    </nav>
+
+  
+
+    
+
+
+
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Attach Additional Details of Project</h2>
+    </div>
+    <div class="col-md-15">
+
+    <div class="table-responsive">
+                
+
+<div class="container">
+  <div class="container">
+    <form method="post" enctype="multipart/form-data">
+
+        
+        {% csrf_token %}
+        <br><br>
+        {{ form.as_p }}
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+  
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<hr>
+
+  <br>
+
+
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script>
+    </script>
+</body>
+
+</html>

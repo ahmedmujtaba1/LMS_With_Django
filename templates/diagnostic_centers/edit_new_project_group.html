@@ -1,0 +1,113 @@
+
+  
+
+
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Supervisor Dashboard</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <!-- Add your custom CSS styles if needed -->
+    <style>
+        /* Add your custom styles here */
+    </style>
+</head>
+
+<body>
+    <div class="fakeLoader"></div>
+
+    <nav class="navbar navbar-expand-lg header-shadow bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="">
+                <b>Supervisor</b>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars text-white"></i>
+            </button>
+
+           
+            <div class="widget-subheading">Welcome {{ admin.username }}</div>
+        <ul>
+            <ul class="dropdown nav-item">
+                <a href="{% url 'diagnostic_centers:admin-logout' %}" tabindex="0"
+                    class="nav-link text-white">Logout</a>
+            </ul>
+
+        </ul>
+
+                   </div>
+        </div>
+    </nav>
+
+  
+
+    <h2 class="text-center">Add Remarks on Notice Board</h2>
+
+<!-- <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center">Edit Group</h2>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="{{ form.supervisor.id_for_label }}">Supervisor:</label>
+            {{ form.supervisor }}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.student1.id_for_label }}">Student 1:</label>
+            {{ form.student1 }}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.student2.id_for_label }}">Student 2:</label>
+            {{ form.student2 }}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.student3.id_for_label }}">Student 3:</label>
+            {{ form.student3 }}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.prediction.id_for_label }}">Prediction:</label>
+            {{ form.prediction }}
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form> -->
+        <hr>
+       
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="{{ form.notice.id_for_label }}">Notice:</label>
+            {{ form.notice }}
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<hr>
+
+ 
+
+<br>
+<br>
+<br>
+
+
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script>
+    </script>
+</body>
+
+</html>
